@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; connect-src https://ctsijiwlhfsmsypqgwix.supabase.co; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <title>Submit a game · Reloaded eShop</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="submit.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="brand"><span class="brand-reloaded">Reloaded</span> <span class="brand-eshop">eShop</span></div>
+      <span class="masthead-note">Community homebrew</span>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside class="rail" aria-label="Submission steps">
+      <div class="rail-cap">Publish with us</div>
+      <div class="rail-item current"><span class="rail-count">1</span><span>Suggest a game</span></div>
+      <div class="rail-item"><span class="rail-count">2</span><span>Safety review</span></div>
+      <div class="rail-item"><span class="rail-count">3</span><span>Wii U catalog</span></div>
+    </aside>
+
+    <main>
+      <div class="intro">
+        <p class="eyebrow">Developer submissions</p>
+        <h1>Bring your homebrew to Wii U.</h1>
+        <p>Suggest a free, redistributable game for the Reloaded eShop. This form sends it to a private review queue. It does not publish or upload a package.</p>
+      </div>
+
+      <div class="section-bar">GAME INFORMATION</div>
+      <form id="submission-form" class="form-card" novalidate>
+        <div class="field-row">
+          <label for="title">Game title <span class="required">required</span></label>
+          <input id="title" name="title" type="text" minlength="2" maxlength="100" required autocomplete="off" placeholder="Your game's title">
+        </div>
+        <div class="field-row">
+          <label for="display_name">Developer credit <span class="optional">optional, unverified</span></label>
+          <input id="display_name" name="display_name" type="text" maxlength="80" placeholder="How you want to be credited">
+        </div>
+        <div class="field-row">
+          <label for="summary">What is the game? <span class="required">required</span></label>
+          <textarea id="summary" name="summary" minlength="20" maxlength="1000" rows="5" required placeholder="Describe gameplay and what makes it fun."></textarea>
+          <small>20–1000 characters. Please describe the game in your own words.</small>
+        </div>
+        <div class="field-grid">
+          <div class="field-row">
+            <label for="source_url">Source code URL <span class="required">required</span></label>
+            <input id="source_url" name="source_url" type="url" maxlength="500" required pattern="https://.*" placeholder="https://github.com/you/game">
+          </div>
+          <div class="field-row">
+            <label for="license_spdx">License ID <span class="required">required</span></label>
+            <input id="license_spdx" name="license_spdx" type="text" minlength="2" maxlength="80" required pattern="[A-Za-z0-9.+-]+" placeholder="MIT, GPL-3.0-or-later, …">
+          </div>
+        </div>
+        <div class="field-grid">
+          <div class="field-row">
+            <label for="release_url">Release or WUHB URL <span class="optional">optional</span></label>
+            <input id="release_url" name="release_url" type="url" maxlength="500" pattern="https://.*" placeholder="https://github.com/you/game/releases">
+          </div>
+          <div class="field-row">
+            <label for="contact_url">Contact page <span class="optional">optional</span></label>
+            <input id="contact_url" name="contact_url" type="url" maxlength="500" pattern="https://.*" placeholder="https://github.com/you">
+          </div>
+        </div>
+        <label class="check-row" for="rights_attested">
+          <input id="rights_attested" name="rights_attested" type="checkbox" required>
+          <span>I have the right to submit this game for review and can identify the license and source for all included content. <strong>No commercial Nintendo games, title keys, or unauthorized packages.</strong></span>
+        </label>
+        <div class="form-footer">
+          <p>Submissions are reviewed manually. A display name or PNID typed here never proves account ownership. Do not include passwords or private information.</p>
+          <button id="submit-button" type="submit">Send for review <span aria-hidden="true">→</span></button>
+        </div>
+        <p id="form-status" class="status" role="status" aria-live="polite"></p>
+      </form>
+      <p class="after-note">Already submitted? Keep your source and release links available while the review is pending.</p>
+    </main>
+  </div>
+  <footer class="site-footer">Reloaded eShop · Free community homebrew for Wii U</footer>
+</body>
+</html>
